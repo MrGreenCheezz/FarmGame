@@ -3,22 +3,14 @@ const path = require('path');
 const app = express();
 const port = 8000;
 
-// Указываем путь к папке с собранным проектом Unity
-// app.use((req, res, next) => {
-//     if (req.url.match(/\.(data|wasm|jsd)\.gz$/)) {
-//       res.set({
-//         "Content-Encoding": "gzip",
-//         "Content-Type": req.url.endsWith(".wasm.gz") ? "application/wasm" : "application/octet-stream"
-//       });
-//     }
-//     next();
-//   });
-app.use(express.static('F:\\Unity\\FarmingGameClient\\Build'));
+
+const staticFolderPath = path.join(__dirname, 'Build'); 
+app.use(express.static(staticFolderPath));
 
 app.get('/', (req, res) => {
-    res.sendFile('F:\\Unity\\FarmingGameClient\\Build', 'index.html');
+    res.sendFile(path.join(staticFolderPath, 'index.html'));
 });
 
-app.listen(port, '0.0.0.0' , () => {
+app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
