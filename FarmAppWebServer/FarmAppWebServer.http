@@ -1,4 +1,4 @@
-@FarmAppWebServer_HostAddress = http://localhost:5145
+@FarmAppWebServer_HostAddress = http://localhost:8008
 
 GET {{FarmAppWebServer_HostAddress}}/weatherforecast/
 Accept: application/json

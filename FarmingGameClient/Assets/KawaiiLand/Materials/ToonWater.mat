@@ -2,24 +2,20 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 8
+  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonWater
   m_Shader: {fileID: 4800000, guid: f24809d953f26f64b9c352c89807da80, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -95,7 +91,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Ints: []
     m_Floats:
     - Vector1_2E11270D: 0.03
     - Vector1_39D35881: 1
@@ -120,21 +115,14 @@ Material:
     - _EnvironmentReflections: 1
     - _FoamMaxDistance: 0.4
     - _FoamMinDistance: 0.04
-    - _Foam_Amount: 0.1
-    - _Foam_Scale: 258
-    - _Foam_Speed: 0.1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Refraction_Scale: 1.2
-    - _Refraction_Speed: 0.025
-    - _Refraction_Strenght: 0.118
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -142,11 +130,6 @@ Material:
     - _Surface: 0
     - _SurfaceDistortionAmount: 0.27
     - _SurfaceNoiseCutoff: 0.797
-    - _Use_Waves: 0
-    - _Water_Depth_Fade_Distance: 0.41
-    - _Wave_Height: 1
-    - _Wave_Scale: 0.001
-    - _Wave_Speed: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -154,14 +137,11 @@ Material:
     - Color_51A4B6EC: {r: 0, g: 0.7135715, b: 1, a: 0}
     - Color_C347D0B: {r: 0.4549662, g: 0.6634097, b: 0.6792453, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Deep_Water_Color: {r: 0.16509432, g: 1, b: 0.9145231, a: 0.56078434}
-    - _DepthGradientDeep: {r: 0.086274505, g: 0.77571887, b: 1, a: 0.749}
+    - _Color: {r: 0.56737274, g: 0.9440612, b: 0.9622642, a: 1}
+    - _DepthGradientDeep: {r: 0.20000002, g: 0.78823537, b: 0.9921569, a: 1}
     - _DepthGradientShallow: {r: 0.427451, g: 1, b: 0.72391486, a: 0.725}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Foam_Color: {r: 1, g: 1, b: 1, a: 0.8666667}
-    - _Shallow_Water_Color: {r: 0, g: 0.7732315, b: 1, a: 0.44705883}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SurfaceNoiseScroll: {r: 0.03, g: 0.03, b: 0, a: 0}
   m_BuildTextureStacks: []
@@ -177,4 +157,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 7
+  version: 4

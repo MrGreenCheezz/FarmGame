@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adf4cf130a7b1640951a73a1119ea1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  JwtToken: 
+  URL: https://greencheezz.ddns.net/
+  IsLogedIn: 0
+  IsInGame: 0

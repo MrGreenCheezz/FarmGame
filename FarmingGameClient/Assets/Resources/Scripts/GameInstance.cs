@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Net.Sockets;
+using System.Net;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
@@ -11,13 +13,14 @@ public class GameInstance : MonoBehaviour
     public static GameInstance instance;
     [SerializeField]
     public string JwtToken;
-    public string URL = "http://localhost:5145/";
+    public string URL = "https://greencheezz.ddns.net/";
     public bool IsLogedIn = false;
     public bool IsInGame = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       if(instance != null)
+       
+        if (instance != null)
         {
             Destroy(this);
             Debug.Log("Another game instance already created, destroying!");
@@ -40,6 +43,7 @@ public class GameInstance : MonoBehaviour
 
         using (UnityWebRequest request = new UnityWebRequest(urlWithParams, "POST"))
         {
+            request.timeout = 30;
             // Настраиваем запрос как в curl примере
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("accept", "*/*");
@@ -117,8 +121,9 @@ public class GameInstance : MonoBehaviour
             {
                 Debug.LogError($"Error: {request.error}");
                 Debug.LogError($"Response Code: {request.responseCode}");
-                Debug.LogError($"Response Body: {request.downloadHandler.text}");
-                mainMenu.SetErrorString(request.downloadHandler.text);
+                Debug.LogError($"Response Body: {(string.IsNullOrEmpty(request.downloadHandler.text) ? "Empty" : request.downloadHandler.text)}");
+                Debug.LogError($"URL: {request.url}"); 
+                mainMenu.SetErrorString(request.error); 
             }
             else
             {
