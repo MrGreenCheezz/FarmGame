@@ -21,4 +21,9 @@ public class GameOverlay : MonoBehaviour
     {
         
     }
+
+    public void OpenShop()
+    {
+
+    }
 }

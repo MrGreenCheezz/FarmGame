@@ -26,6 +26,7 @@ public class ShopPlantUIScript : MonoBehaviour
         priceText.text = price.ToString();
     }
 
+
     public async void IconsClicked()
     {
       bool res = await FarmInstance.instance.BuyPlant(potIndex, plantType);

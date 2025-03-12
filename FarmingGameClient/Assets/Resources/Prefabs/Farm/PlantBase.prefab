@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OwnerId: 0
   GrowStateInSeconds: 0
-  PotIndex: 0
+  PotIndex: 19
   CurrentGrowState: 0
   PlantType: 0
   poofEffect: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}

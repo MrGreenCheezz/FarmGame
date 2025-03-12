@@ -59,6 +59,14 @@ public class FarmInstance : MonoBehaviour
         CurrentFarmObject.initializePlants();
     }
 
+    public async void ChangeFarmLevel()
+    {
+        Destroy(CurrentFarmObject);
+        await GetPlantsData();
+        CurrentFarmObject = Instantiate(farmsList[LocalPlayerData.farmLevel - 1]).GetComponent<FarmAnyLevelScript>();
+        CurrentFarmObject.initializePlants();
+    }
+
     public async Task<bool> GetPlayerData()
     {
         var Url = GameInstance.instance.URL + "player/playerData";
@@ -153,6 +161,31 @@ public class FarmInstance : MonoBehaviour
                 CurrentFarmObject.PlantsOnFarm[potIndex].SetupPlant();
                 OnMoneyChanged?.Invoke();
 
+                return true;
+            }
+        }
+    }
+
+    public async Task<bool> UpgradeFarm()
+    {
+        var Url = GameInstance.instance.URL + "player/upgradeFarm";
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(Url))
+        {
+
+            webRequest.SetRequestHeader("Authorization", "Bearer " + GameInstance.instance.JwtToken);
+
+            await webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError(webRequest.error);
+                return false;
+            }
+            else
+            {
+
+                LocalPlayerData = JsonUtility.FromJson<PlayerData>(webRequest.downloadHandler.text);
+                OnMoneyChanged?.Invoke();
                 return true;
             }
         }
@@ -270,6 +303,7 @@ public class PlayerData
     public long currentPlayerXP ;
     public DateTime lastLoginTime ;
     public string lastToken ;
+    public int baseFarmCost;
 }
 [Serializable]
 public class PlantType

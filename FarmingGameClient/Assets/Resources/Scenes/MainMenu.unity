@@ -22490,6 +22490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3652720594829681430, guid: 559fb046ee8e11743adba6a3e7dc5a79, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8618025926117441377, guid: 559fb046ee8e11743adba6a3e7dc5a79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

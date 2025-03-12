@@ -8,6 +8,7 @@ namespace FarmAppWebServer.Models
         public int PlayerId { get; set; }
         public int Money { get; set; }
         public int FarmLevel { get; set; }
+        public int BaseFarmCost { get; set; }
         public int CurrentPlayerLevel { get; set; }
         public long CurrentPlayerXP { get; set; }
         public DateTime LastLoginTime { get; set; }

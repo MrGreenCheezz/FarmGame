@@ -54,9 +54,11 @@ MonoBehaviour:
     currentPlayerLevel: 0
     currentPlayerXP: 0
     lastToken: 
+    BaseFarmCost: 0
   PlantsTypes:
     items: []
   farmsList:
   - {fileID: 4090864660459716274, guid: 5519e5d0ac4e58e40a966bf76210ebf9, type: 3}
+  - {fileID: 8741686631392196295, guid: 5353f11a513a1f9469590f14141cbfb6, type: 3}
   CurrentFarmObject: {fileID: 0}
   overlayPrefab: {fileID: 2093621260979356137, guid: 44ffaeaa9e03b0041a2a6ba9b60663a5, type: 3}

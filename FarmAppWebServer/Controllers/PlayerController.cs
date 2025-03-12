@@ -21,6 +21,27 @@ namespace FarmAppWebServer.Controllers
         }
 
 
+        [HttpGet("upgradeFarm")]
+        [Authorize]
+        public async Task<IActionResult> UpgradeFarm()
+        {
+            var token = HttpContext.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+            var userdata = _context.PlayerDataValues.FirstOrDefault(user => user.LastToken == token);
+            if (userdata == null)
+            {
+                return NotFound("No users found");
+            }
+            var farmFinalCost = userdata.FarmLevel * userdata.BaseFarmCost;
+            if(farmFinalCost > userdata.Money)
+            {
+                return BadRequest("No money");
+            }
+            userdata.Money -= farmFinalCost;
+            userdata.FarmLevel += 1;
+            await _context.SaveChangesAsync();
+            return Ok(userdata);
+        }
+
         [HttpGet("playerData")]
         [Authorize]
         public async Task<IActionResult> GetPlayersData()

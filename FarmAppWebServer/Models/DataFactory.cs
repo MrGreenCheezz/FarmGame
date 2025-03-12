@@ -24,7 +24,8 @@
                 CurrentPlayerLevel = currentPlayerLevel,
                 CurrentPlayerXP = currentPlayerXp,
                 LastLoginTime = loginDate,
-                LastToken = lastToken
+                LastToken = lastToken,
+                BaseFarmCost = 30000
             };
             return playerData;
         }
